@@ -4,7 +4,7 @@
 	padding:0;
 }
 
-:root {
+:root{
 	--base: #555;
 	--base-100: #f1f1f1;
 	--base-400: #555;
@@ -25,6 +25,7 @@ body {
 	font-style: normal;
 	font-size: 20px;
 	padding-bottom:1000px;
+	background-color: var(--base-800);
 }
 
 a {
@@ -49,14 +50,14 @@ header {
 		padding:10px;
 		align-items:center;
 		font-weight:600;
-		color: var(--base-800);
+		color: var(--base-400);
 		
 		.logo {
 			display:flex;
 			align-items:center;
 			justify-content:center;
 			font-size:32px;
-			background-color: var(--base-800);
+			background-color: var(--base-400);
 			color: var(--base-100);
 			height:64px;
 			width:64px;
@@ -71,6 +72,7 @@ header {
 	nav {
 		display:flex;
 		align-items:center;
+		margin: 15px;
 		ul {
 			display:flex;
 			list-style-type: none;
@@ -78,11 +80,12 @@ header {
 			li {
 				display:inline-block;
 				a {
+					font-size: 15px;
 					display:inline-block;
 					padding:10px 20px;
-					color:var(--base);
+					color:var(--base-100);
 					&:hover {
-						background-color: var(--base-100);
+						background-color: var(--blue);
 						border-radius:10px;
 						text-decoration:none;
 					}
@@ -91,7 +94,7 @@ header {
 		}
 		.mobile-toggle {
 			display:none;
-			color:var(--base-800);
+			color:var(--base-100);
 			padding:10px;
 			@media (max-width:768px){
 				display:inline-block;
@@ -162,7 +165,7 @@ section {
 		}
 	}
 	&.black {
-		background-color: black;
+		background-color: var(--base-400);
 		color: white;
 		&:hover {
 			background-color: var(--base);
@@ -174,7 +177,8 @@ section {
 h1 {
 	font-size:64px;
 	line-height:1;
-	margin-bottom:10px;
+	color: var(--base-100);
+	margin-bottom:20px;
 	small {
 		display:block;
 		font-weight:100;
@@ -184,14 +188,24 @@ h1 {
 	}
 }
 
+
 .hero {
 	display:flex;
 	@media (max-width:1024px){
 		flex-direction:column;
 	}
+	p{
+		width: 60%;
+		color: var(--base-400);
+	}
+	small{
+		color: var(--base-400);
+		margin-bottom: 5px;
+	}
 	.hero-blue {
 		flex:1;
-		background-color: var(--blue-100);
+		/* background: linear-gradient(45deg, white, rgb(251, 137, 255), white, blue); */
+		border: solid 1px var(--base-400);
 		border-radius:30px;
 		padding:30px;
 		display:flex;
@@ -246,13 +260,13 @@ h1 {
 		height:128px;
 		overflow:hidden;
 		position:relative;
-		.track {
+		.track{
 			position:absolute;
 			white-space:nowrap;
 			will-change:transform;
 			animation: marquee 40s linear infinite;
 			display:flex;
-			gap:5px;
+			gap:20px;
 		}
 	}
 }
@@ -267,16 +281,17 @@ h1 {
 }
 
 h2 {
-	font-size:64px;
+	font-size:34px;
 	line-height:1;
-	margin-bottom:10px;
+	margin-bottom:25px;
 	text-align:center;
-	color: var(--base-800);
+	color: var(--base-100);
 	padding:30px;
-	small {
+	small{
 		display:block;
+		margin-bottom: 10px;
 		font-weight:100;
-		font-size:0.5em;
+		font-size:0.9em;
 		color:var(--base);
 	}
 	@media (max-width:1024px){
@@ -289,12 +304,13 @@ h3 {
 	font-weight:600;
 	line-height:1;
 	margin-bottom:20px;
-	color: var(--base-800);
+	color: var(--base-100);
 }
 
 .skills {
 	.holder-blue {
-		background-color: var(--blue-100);
+		/* background-color: blue; */
+		border: solid 1px var(--base-400);
 		border-radius:30px;
 		padding:30px;
 		display:flex;
@@ -309,10 +325,12 @@ h3 {
 				margin-right:100px;
 				margin-bottom:20px;
 				li {
+					border-radius: 5px;
 					display:inline-block;
-					background-color: var(--blue-400);
+					color: var(--base);
+					background-color: var(--base-100);
 					padding:10px 20px;
-					border-radius:15px;
+					border-radius:13px;
 					margin-bottom:10px;
 				}
 			}
@@ -320,6 +338,7 @@ h3 {
 		.right-column {
 			flex:1;
 			p {
+				color: var(--base-400);
 				margin-bottom:20px;
 			}
 		}
@@ -334,7 +353,7 @@ h3 {
 			flex-direction:column;
 		}
 		article {
-			background-color: var(--yellow-100);
+			border: solid 1px var(--base-400);
 			padding:30px;
 			border-radius:30px;
 			flex:1;
@@ -345,9 +364,10 @@ h3 {
 			div {
 				font-weight:600;
 				margin-bottom:5px;
-				color: var(--base-800);
+				color: var(--base-400);
 			}
 			p {
+				color: var(--blue);
 				margin-bottom:10px;
 			}
 			figure {
@@ -396,15 +416,18 @@ h3 {
 .main{
 	.container-grid {
 		display:grid;
+		margin-bottom: -400px;
 		grid-gap:30px;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(4, 1fr);
-		height:700px;
+		height:900px;
 		@media(max-width:1024px){
+			margin-bottom: 20px;
 			grid-template-rows: repeat(8, 1fr);
 		}
 		@media(max-width:768px){
 			display:flex;
+			margin-bottom: 20px;
 			flex-direction:column;
 			gap:30px;
 			height:auto;
@@ -477,7 +500,7 @@ h3 {
 
 .chatbot {
 	.chatbot-blue {
-		background-color: var(--blue-100);
+		border: solid 1px var(--base-100);
 		border-radius:30px;
 		padding:30px;
 		gap:30px;
@@ -486,6 +509,7 @@ h3 {
 			flex-direction:column;
 		}
 		p {
+			color: var(--base-400);
 			margin-bottom:30px;
 		}
 		.chat-info {
