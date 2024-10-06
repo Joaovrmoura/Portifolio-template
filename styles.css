@@ -3,24 +3,50 @@
 	margin:0;
 	padding:0;
 }
+::selection {
+    background-color: transparent
+}
+
+::-moz-selection {
+    background: 0 0
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased
+}
+
+::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a10
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--blue-800);
+}
 
 :root{
 	--base: #555;
-	--tech-stack-box-border-color: #292929;
+	--tech-stack-box-border-color: #1e293b;
 	--color-navbarBorder-dark: #e2e2e207;
 	--tech-stack-box-first-color: #1a1a29;
     --tech-stack-box-second-color: rgba(27, 27, 40, 0);
 	--base-100: #f1f1f1;
-	--base-400: #555;
+	--base-400: #808d9f;
 	--base-800: #11111b;
 	--yellow: #ffda4b;
 	--yellow-100: #fffbe6;
 	--yellow-400: #ffda4b;
 	--yellow-800: #8b6f00;
-	--blue: #0a61ae;
+	--blue: #6e80e3;
 	--blue-100: #e2f8ff;
 	--blue-400: #61dafb;
-	--blue-800: #0a61ae;
+	--blue-800: #595eb2;
 }
 
 body {
@@ -67,6 +93,7 @@ header {
 		
 		.logo {
 			display:flex;
+			margin: 10px;
 			align-items:center;
 			justify-content:center;
 			font-size:32px;
@@ -162,23 +189,23 @@ section {
 	padding:10px 30px;
 	background-color: var(--blue);
 	color: var(--base-100);
-	border-radius:10px;
+	border-radius:8px;
 	transition: ease 0.3s all;
 	&:hover {
 		text-decoration:none;
-		background-color: var(--base-800);
+		background-color: var(--tech-stack-box-first-color);
 	}
 	&.white {
-		background-color: white;
-		color: var(--base-800);
+		background-color:  var(--tech-stack-box-first-color);
+		border: solid 1px #1e293b;
+		color: var(--base-100);
 		&:hover {
-			background-color: var(--base-100);
-			color: var(--base);
+			background-color: #0a0a13;
+			color: var(--base-100);
 		}
 	}
 	&.black {
-		background-color: var(--base-400);
-		color: white;
+		color: var(--base-100);
 		&:hover {
 			background-color: var(--base);
 			color: var(--base-100);
@@ -230,17 +257,25 @@ h1 {
 			}
 		}
 		.call-to-action {
-			margin-top:20px;
+			margin-top:50px;
 			margin-bottom:10px;
 			a {
 				margin-right:10px;
 				margin-bottom:10px;
 			}
 		}
+		
 		.social-links {
-			a {
-				&:hover {
+			a{		
+						
+			    &:hover {
+					
 					text-decoration:none;
+				}
+				img{
+					background-color: var(--blue-100);
+					border-radius: 50%;
+					border: 1px solid var(--tech-stack-box-border-color);
 				}
 			}
 		}
@@ -328,12 +363,47 @@ h3 {
 		/* background-color: blue; */
 		/* border: solid 1px var(--base-400); */
 		border: 1px solid var(--tech-stack-box-border-color);
-		border-radius:30px;
 		padding:30px;
 		display:flex;
 		@media(max-width:1024px){
 			flex-direction:column;
 		}
+		.tech-stack-box {
+			background-image: linear-gradient(to bottom right, var(--tech-stack-box-first-color), 
+			var(--tech-stack-box-second-color))
+		}
+		
+		.tech-stack-wrapper {
+			flex-wrap: wrap;
+		}
+		.tech-stack-wrapper {
+			width: 100%;
+			display: flex;
+			align-items: center
+		}
+		.tech-stack-box,
+		.tooltip {
+			align-items: center;
+			display: flex
+		}
+		
+		.tech-stack-box {
+			width: 80px;
+			height: 80px;
+			justify-content: center;
+			border: 1px solid var(--tech-stack-box-border-color);
+			position: relative
+		}
+		
+		.tech-stack-box img {
+			width: 100%
+		}
+		
+		.tech-stack-box:hover .tooltip {
+			opacity: 1;
+			transition-duration: .3s
+		}
+
 		.left-column {
 			flex:1;
 			ul {
@@ -342,11 +412,12 @@ h3 {
 				margin-right:100px;
 				margin-bottom:20px;
 				li {
-					border-radius: 5px;
+					border-radius: 2px;
 					display:inline-block;
-					color: var(--base);
-					background-color: var(--base-100);
-					padding:10px 20px;
+					color: var(--base-100);
+					background-color:  var(--tech-stack-box-first-color);
+		            border: solid 1px #1e293b;
+					padding:15px 15px;
 					border-radius:13px;
 					margin-bottom:10px;
 				}
@@ -517,7 +588,7 @@ h3 {
 
 .chatbot {
 	.chatbot-blue {
-		border: solid 1px var(--base);
+		border: solid 1px var(--tech-stack-box-border-color);
 		border-radius:30px;
 		padding:30px;
 		gap:30px;
@@ -535,7 +606,7 @@ h3 {
 		}
 		.chat-box {
 			flex:4;
-			border: solid 1px var(--base);
+			border: solid 1px var(--tech-stack-box-border-color);
 			border-radius:15px;
 			padding:30px;
 			display:flex;
