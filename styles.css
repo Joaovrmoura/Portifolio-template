@@ -309,7 +309,7 @@ h1 {
 			position:absolute;
 			white-space:nowrap;
 			will-change:transform;
-			animation: marquee 50s linear infinite;
+			animation: marquee 65s linear infinite;
 			display:flex;
 			gap:20px;
 		}
