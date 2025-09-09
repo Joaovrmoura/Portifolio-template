@@ -132,7 +132,6 @@ header {
 					color: var(--base-100);
 
 					&:hover {
-						border-bottom: solid 1px #0a61ae;
 						text-decoration: none;
 					}
 				}
@@ -216,7 +215,7 @@ section {
 		color: var(--base-100);
 
 		&:hover {
-			background-color: #0a0a13;
+			background-color: var(--tech-stack-box-border-color);
 			color: var(--base-100);
 		}
 	}
@@ -225,7 +224,7 @@ section {
 		color: var(--base-100);
 
 		&:hover {
-			background-color: var(--base);
+			background-color: var(--tech-stack-box-border-color);
 			color: var(--base-100);
 		}
 	}
@@ -431,6 +430,7 @@ h3 {
 		}
 
 		.tech-stack-wrapper {
+			max-width: 600px;
 			width: 100%;
 			display: flex;
 			align-items: center
@@ -757,6 +757,40 @@ h3 {
 	border: 1px solid #ff4d4d;
 }
 
+
+.services {
+  border-radius: 12px;
+  color: var(--base-100);
+  max-width: 700px;
+}
+
+.services h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--yellow-400);
+  border-bottom: 2px solid var(--blue-400);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.services ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.services li {
+  margin: 0.8rem 0;
+  padding: 0.6rem 1rem;
+  border-left: 4px solid var(--blue);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.services li:hover {
+  background: rgba(110, 128, 227, 0.1);
+  transform: translateX(5px);
+}
 .chatbot {
 	.chatbot-blue {
 		border: solid 1px var(--tech-stack-box-border-color);

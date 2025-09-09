@@ -19,11 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         emailjs.send("service_fb2b3ci", "template_c05zyzr", params)
           .then(function (res) {
+			alert('Mensagem enviada com sucesso!')
 			document.getElementById('successMsg').style.display = 'block';
 			document.getElementById('errorMsg').style.display = 'none';
 			form.reset();
 		})
 		.catch(function (err) {
+			alert('Algo deu errado ao enviar mensagem, confira o endereço de email!')
 			document.getElementById('successMsg').style.display = 'none';
 			document.getElementById('errorMsg').style.display = 'block';
 		});
@@ -31,6 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		setTimeout(() => {
 			document.getElementById('successMsg').style.display = 'none';
 			document.getElementById('errorMsg').style.display = 'none';
-		},10000)
+		},9000)
     });
 });
